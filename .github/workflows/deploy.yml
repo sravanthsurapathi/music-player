@@ -1,0 +1,46 @@
+name: CI/CD Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📦 Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: 🔐 Set up SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+    - name: ⚙️ Configure SSH Keep-Alive
+      run: |
+        echo -e "Host *\n    ServerAliveInterval 20\n    TCPKeepAlive no" >> ~/.ssh/config
+        chmod 600 ~/.ssh/config
+
+    - name: 🚀 Deploy to EC2
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+          cd ${{ secrets.BACKEND_PATH }}
+          source venv/bin/activate
+          git pull origin main
+          pip install -r requirements.txt
+
+          # Restart backend (change to gunicorn if needed)
+          fuser -k 5000/tcp || true
+          nohup flask run --host=0.0.0.0 --port=5000 > flask.log 2>&1 &
+
+          # Frontend
+          cd ${{ secrets.FRONTEND_PATH }}
+          npm install
+          chmod +x node_modules/.bin/react-scripts
+          timeout 100 npm start
+
+          echo "✅ Deployed successfully."
+        EOF

@@ -1,0 +1,148 @@
+/* General Styles */
+.max-w-md {
+  max-width: 400px;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.bg-white {
+  background: white;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+/* Form Container */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.auth-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Title */
+.auth-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Input Fields */
+.auth-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.auth-input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+  outline: none;
+}
+
+/* Buttons */
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.auth-button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: translateY(-2px);
+}
+
+.auth-button:active {
+  transform: translateY(0);
+}
+
+/* Link Button */
+.auth-link {
+  background: none;
+  border: none;
+  color: #2575fc;
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+.auth-link:hover {
+  color: #6a11cb;
+}
+
+/* Message */
+.auth-message {
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
+}
+
+.auth-message.success {
+  color: #4caf50;
+}
+
+.auth-message.error {
+  color: #ff4d4d;
+}
+
+.input-group {
+    margin-bottom: 1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }

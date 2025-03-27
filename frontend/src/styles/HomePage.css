@@ -1,0 +1,91 @@
+.home-page {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+    background: linear-gradient(to bottom right, #e0f7fa, #fff);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e88e5;
+    padding: 15px 30px;
+    color: white;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 80px 20px 40px;
+    background: url('../assets/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .music-preview {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .music-preview button {
+    display: block; /* Makes the button take full width */
+    margin: 10px auto; /* Centers the button */
+    padding: 10px 20px; /* Adds spacing inside the button */
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+  .music-preview .track-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; /* Adds space between the button and track details */
+        margin-top: 10px;
+        background: black;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+}
+
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    margin-top: auto;
+  }
+  

@@ -1,0 +1,23 @@
+.music-player {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .music-player button {
+    padding: 10px 20px;
+    background: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .music-player button:hover {
+    background: #2575fc;
+  }
+  
+  .music-player button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
