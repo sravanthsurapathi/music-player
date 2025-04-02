@@ -1,6 +1,6 @@
 name: CI/CD Deploy to EC2
 
-on: 
+on:
   push:
     branches:
       - main
